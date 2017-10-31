@@ -1,7 +1,39 @@
 $(document).ready(function() {
+//audio for win and lose
   $("body").prepend('<audio id="winAudio" src = "assets/audio/XF_Loop_323.wav" audio/>');
   $("body").prepend('<audio id="loseAudio" src = "assets/audio/XF_SynLongC09.wav" audio/>');
-  //$("body").prepend('<audio id="audio2" src = "assets/audio/win.mp3" audio/>');
+
+//audio for crystal clicks
+  var audio1 = document.createElement('audio');
+  audio1.setAttribute('src','assets/audio/XF_SynChords01.wav');
+
+  $('#crystal1').click(function() {
+    audio1.play();
+  });
+//2
+  var audio2 = document.createElement('audio');
+  audio2.setAttribute('src','assets/audio/XF_SynChords02.wav');
+
+  $('#crystal2').click(function() {
+    audio2.play();
+  });
+
+  //3
+
+  var audio3 = document.createElement('audio');
+  audio3.setAttribute('src','assets/audio/XF_SynChords03.wav');
+
+  $('#crystal3').click(function() {
+    audio3.play();
+  });
+
+  //4
+  var audio4 = document.createElement('audio');
+  audio4.setAttribute('src','assets/audio/XF_SynChords04.wav');
+
+  $('#crystal4').click(function() {
+    audio4.play();
+  });
 
 //make the game an object
 var game = {
@@ -62,14 +94,19 @@ scores: function(){
       $('#wins').html(game.wins);
       $(this).removeData("gemvalue");
 
+      $('#yourTotal').html("");
+
       setTimeout(game.newGame, 2000);// timeouts for functions
       setTimeout(game.scores, 2000);
+
     } else if (parseInt(counter) > goalNum) {
       parseInt(game.losses++);
       $("#loseAudio").get(0).play();
       $('#losses').html(game.losses);
       console.log(losses);
       $(this).removeData("gemvalue");
+
+     $('#yourTotal').html("");
 
       setTimeout(game.newGame, 2000);// timeouts for functions
       setTimeout(game.scores, 2000);
