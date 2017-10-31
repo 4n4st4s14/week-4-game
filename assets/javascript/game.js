@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  $("body").prepend('<audio id="winAudio" src = "assets/audio/XF_Loop_323.wav" audio/>');
+  $("body").prepend('<audio id="loseAudio" src = "assets/audio/XF_SynLongC09.wav" audio/>');
+  //$("body").prepend('<audio id="audio2" src = "assets/audio/win.mp3" audio/>');
+
 //make the game an object
 var game = {
 // variables
@@ -54,6 +58,7 @@ scores: function(){
     //win/Lose
     if (parseInt(counter)=== goalNum) {
       parseInt(game.wins++);
+      $("#winAudio").get(0).play();
       $('#wins').html(game.wins);
       $(this).removeData("gemvalue");
 
@@ -61,6 +66,7 @@ scores: function(){
       setTimeout(game.scores, 2000);
     } else if (parseInt(counter) > goalNum) {
       parseInt(game.losses++);
+      $("#loseAudio").get(0).play();
       $('#losses').html(game.losses);
       console.log(losses);
       $(this).removeData("gemvalue");
