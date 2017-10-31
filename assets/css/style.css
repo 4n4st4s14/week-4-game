@@ -1,0 +1,39 @@
+body {
+  background: url("../images/pipPopBgrnd.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+
+h1 {
+  font-family: 'Amaranth', sans-serif;
+}
+
+.lead, .text {
+  font-family: 'Titillium Web', sans-serif;
+  color: #fff;
+}
+
+img {
+     width: 135px;
+     height: 200px;
+     margin: 0px auto;
+     border-radius: 10px;
+}
+
+.jumbotron {
+  background-color: transparent;
+  color: #fff;
+  margin: 0px;
+}
+
+#goalNum {
+  color: #fff;
+}
+
+.contrast {
+  background: rgba(180, 132, 132, 0.5);
+  padding:10px;
+  border-radius: 10px;
+}

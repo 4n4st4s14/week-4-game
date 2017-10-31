@@ -4,31 +4,42 @@
   <title>crystal game</title>
 <!--jQuery link -->
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 <!-- <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"> -->
 <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css?family=Amaranth|Titillium+Web" rel="stylesheet">
 </head>
 <body>
 
-  <h1>Crystal Collector</h1>
 
+  <div class="container">
+      <div class="jumbotron ">
+        <div class="contrast">
+    <h1 class="display-3">Crystal Collector</h1>
+    <p class="lead">You will be given a random number at the start of the game.<br>By clicking on a crystal, you will add a specified amount of points to your total score. <br>You win the game by matching your total score to the random number. You lose if your total score excedes the random number. The game will automatically reset after you win or lose.</p>
+  </div>
+</div>
+
+<div class="contrast">
   <div id="goalNum"></div>
 
   <div id="score">
-     <div>Wins: <span id="wins"></span></div>
-     <div>Losses: <span id="losses"></span></div>
+     <div class="text">Wins: <span id="wins"></span></div>
+     <div class="text">Losses: <span id="losses"></span></div>
   </div>
 
   <div id="crystals">
-    <button class="btn" id="crystal-1"><img src="">1</button>
-    <button class="btn" id="crystal-2"><img src="">2</button>
-    <button class="btn" id="crystal-3"><img src="">3</button>
-    <button class="btn" id="crystal-4"><img src="">4</button>
+    <button class="btnz" id="crystal-1"><img class="crystals" src="./assets/images/crystal1.png"></button>
+    <button class="btnz" id="crystal-2"><img src="./assets/images/crystal2.png"></button>
+    <button class="btnz" id="crystal-3"><img src="./assets/images/crystal3.png"></button>
+    <button class="btnz" id="crystal-4"><img src="./assets/images/crystal4.png"></button>
   </div>
 
-  <div >Your total is:</div>
-
-  <div id="yourTotal"></div>
-
+  <div class="text">Your total is: <span id="yourTotal"></span></div>
+</div>
+</div>
 
 
   <!-- JS link -->

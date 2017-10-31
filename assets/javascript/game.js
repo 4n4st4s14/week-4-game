@@ -1,12 +1,12 @@
 $(document).ready(function() {
 //make the game an object
 var game = {
-
+// variables
   goalNum: 0,
   counter: 0,
   wins: 0,
   losses: 0,
-
+//game
   newGame: function() {
      //generate random goalNum
     goalNum = parseInt(Math.floor(Math.random()*120)) + 19;
@@ -30,7 +30,7 @@ var game = {
 
      console.log(gemNums);
    //assign each button an attribute that stores data- gemvalue, with the value //being  the number generated in gemNums at the same index
-     $(".btn").each(function(i, obj){
+     $(".btnz").each(function(i, obj){
        $(this).attr("data-gemvalue", gemNums[i]);
 
        console.log(parseInt($(this).data("gemvalue")));
@@ -43,23 +43,30 @@ var game = {
 //adding the Scores
 scores: function(){
 
-  $('.btn').on('click', function(event){
+  $('.btnz').on('click', function(event){
     //add the gem value to the counter value
     counter = parseInt(counter) + parseInt($(this).data("gemvalue"));
 
     console.log(counter);
     console.log(parseInt($(this).data("gemvalue")));
 
+    $('#yourTotal').html(counter);
     //win/Lose
     if (parseInt(counter)=== goalNum) {
       parseInt(game.wins++);
       $('#wins').html(game.wins);
       $(this).removeData("gemvalue");
+
+      setTimeout(game.newGame, 2000);// timeouts for functions
+      setTimeout(game.scores, 2000);
     } else if (parseInt(counter) > goalNum) {
       parseInt(game.losses++);
       $('#losses').html(game.losses);
       console.log(losses);
       $(this).removeData("gemvalue");
+
+      setTimeout(game.newGame, 2000);// timeouts for functions
+      setTimeout(game.scores, 2000);
     }
 
   });
