@@ -9,6 +9,7 @@ $(document).ready(function() {
 
   $('#crystal1').click(function() {
     audio1.play();
+    $(this).toggleClass("animated pulse");
   });
 //2
   var audio2 = document.createElement('audio');
@@ -16,6 +17,7 @@ $(document).ready(function() {
 
   $('#crystal2').click(function() {
     audio2.play();
+    $(this).toggleClass("animated pulse");
   });
 
   //3
@@ -25,6 +27,7 @@ $(document).ready(function() {
 
   $('#crystal3').click(function() {
     audio3.play();
+    $(this).toggleClass("animated pulse");
   });
 
   //4
@@ -33,6 +36,7 @@ $(document).ready(function() {
 
   $('#crystal4').click(function() {
     audio4.play();
+    $(this).toggleClass("animated pulse");
   });
 
 //make the game an object
@@ -80,6 +84,8 @@ var game = {
 scores: function(){
 
   $('.btnz').on('click', function(event){
+
+
     //add the gem value to the counter value
     counter = parseInt(counter) + parseInt($(this).data("gemvalue"));
 
