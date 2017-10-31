@@ -2,22 +2,51 @@ $(document).ready(function() {
 //audio for win and lose
   $("body").prepend('<audio id="winAudio" src = "assets/audio/XF_Loop_323.wav" audio/>');
   $("body").prepend('<audio id="loseAudio" src = "assets/audio/XF_SynLongC09.wav" audio/>');
+//animation for crystal clicks
 
+$('#crystal1').click(function(e){
+  e.preventDefault();
+  $(this).addClass("animated pulse").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
+          $(this).removeClass( "animated pulse" );
+      });
+});
+
+$('#crystal2').click(function(e){
+  e.preventDefault();
+  $(this).addClass("animated pulse").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
+          $(this).removeClass( "animated pulse" );
+      });
+});
+
+$('#crystal3').click(function(e){
+  e.preventDefault();
+  $(this).addClass("animated pulse").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
+          $(this).removeClass( "animated pulse" );
+      });
+});
+
+$('#crystal4').click(function(e){
+  e.preventDefault();
+  $(this).addClass("animated pulse").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
+          $(this).removeClass( "animated pulse" );
+      });
+});
 //audio for crystal clicks
   var audio1 = document.createElement('audio');
   audio1.setAttribute('src','assets/audio/XF_SynChords01.wav');
 
   $('#crystal1').click(function() {
     audio1.play();
-    $(this).toggleClass("animated pulse");
+
   });
+
 //2
   var audio2 = document.createElement('audio');
   audio2.setAttribute('src','assets/audio/XF_SynChords02.wav');
 
   $('#crystal2').click(function() {
     audio2.play();
-    $(this).toggleClass("animated pulse");
+
   });
 
   //3
@@ -27,7 +56,7 @@ $(document).ready(function() {
 
   $('#crystal3').click(function() {
     audio3.play();
-    $(this).toggleClass("animated pulse");
+
   });
 
   //4
@@ -36,7 +65,7 @@ $(document).ready(function() {
 
   $('#crystal4').click(function() {
     audio4.play();
-    $(this).toggleClass("animated pulse");
+
   });
 
 //make the game an object
